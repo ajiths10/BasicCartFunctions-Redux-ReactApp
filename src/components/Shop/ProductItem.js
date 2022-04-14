@@ -9,7 +9,6 @@ const ProductItem = (props) => {
   const dispatch = useDispatch();
 
   const submitbtnHandler=()=>{
-    
     dispatch(cartActions.newCartItems(props))
   };
 

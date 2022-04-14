@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const cartInitialState={ cartIsVisible:false,
-                         cartitems:[],   
+                         cartitems:[],
+                         totalQuantity:0,         
                                 }
 
 const cartSlice = createSlice({
@@ -12,8 +13,25 @@ const cartSlice = createSlice({
             state.cartIsVisible = !state.cartIsVisible;
         }, 
         newCartItems(state, action){
-            state.cartitems = [...state.cartitems,action.payload]
-        }
+            const arr=[...state.cartitems];
+            let check =false;
+
+            state.cartitems.forEach((element,index)=>{
+                if(element.id==action.payload.id){
+                    check =true;
+                  arr[index].quantity =  arr[index].quantity +1;
+                }
+            })
+            if(check){
+                state.cartitems=[...arr];
+            }else{
+                state.cartitems = [...state.cartitems,action.payload]
+            }
+           
+            
+            
+        },
+        removeItem(state){}
     }
 })
 
