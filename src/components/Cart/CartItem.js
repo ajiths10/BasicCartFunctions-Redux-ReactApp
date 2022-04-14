@@ -1,14 +1,9 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import classes from './CartItem.module.css';
 import { cartActions } from '../../store/cartReducer';
 
 const CartItem = (props) => {
-  const items = useSelector(state=>state.cartReducer.cartitems);
   const dispatch = useDispatch();
-let total = 0;
-items.map((element)=>{
-  total= total +(element.price*element.quantity )
-})
 
 const plushandler=()=>{
   dispatch(cartActions.newCartItems(props))
@@ -24,7 +19,6 @@ const minushandler=()=>{
       <header>
         <h3>{props.title}</h3>
         <div className={classes.price}>
-          ${total.toFixed(2)}{' '}
           <span className={classes.itemprice}>(${props.price.toFixed(2)}/item)</span>
         </div>
       </header>

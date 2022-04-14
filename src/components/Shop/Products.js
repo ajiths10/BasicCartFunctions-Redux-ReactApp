@@ -12,7 +12,7 @@ const Products = (props) => {
   },
   {
     title:'Test2',
-    price:6,
+    price:10,
     description:'This is a first product - amazing!',
     quantity:1,
     id:'id2',
