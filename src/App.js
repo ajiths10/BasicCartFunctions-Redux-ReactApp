@@ -6,6 +6,8 @@ import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 import { NotificationActions } from './store/ui';
 
+let init = true;
+
 function App() {
   const isCart = useSelector(state=>state.cartReducer.cartIsVisible);
   const data = useSelector(state=>state.cartReducer.cartitems);
@@ -13,6 +15,12 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(()=>{
+
+    if(init){
+       init = false;
+       return
+    }
+
     dispatch(NotificationActions.setIsError(false));
     dispatch(NotificationActions.setIsSuccess(false));
     dispatch(NotificationActions.setIsLoding(true));
@@ -31,7 +39,7 @@ function App() {
       dispatch(NotificationActions.setIsError(true));
     })
 
-  },[cart]);
+  },[cart,dispatch]);
 
   useEffect(()=>{
     setTimeout(() => {
