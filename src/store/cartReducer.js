@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const cartInitialState={ cartIsVisible:false,
-                         cartitems:[],
-                         totalQuantity:0,         
-                                }
+                         cartitems:[],  }
 
 const cartSlice = createSlice({
     name:'cartIsVisible',
@@ -27,11 +25,24 @@ const cartSlice = createSlice({
             }else{
                 state.cartitems = [...state.cartitems,action.payload]
             }
-           
-            
             
         },
-        removeItem(state){}
+        removeItem(state,action){
+            if(action.payload.quantity>1){
+                state.cartitems.forEach((element,index)=>{
+                    if(element.id==action.payload.id){
+                        state.cartitems[index].quantity = state.cartitems[index].quantity-1;
+                    }
+                })
+            }else{
+                state.cartitems.forEach((element,index)=>{
+                    if(element.id==action.payload.id){
+                        console.log('hi')
+                        state.cartitems.splice(index,1);
+                    }
+                })
+            }
+        }
     }
 })
 
