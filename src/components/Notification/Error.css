@@ -1,0 +1,15 @@
+.mainDivErr{
+    background-color: rgb(110, 27, 27);
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.nameDivErr{
+    width: 200px;
+    margin-left: 8%;    
+}
+.disDivErr{
+    
+    margin-left: 59%;
+}

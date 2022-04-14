@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import  cartReducer  from './cartReducer';
+import notificationReducers from './ui';
 
 const store = configureStore({
-    reducer:{ cartReducer:cartReducer }
+    reducer:{ cartReducer:cartReducer, notification:notificationReducers }
 })
 
 

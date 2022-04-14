@@ -1,0 +1,15 @@
+.mainDivLD{
+    background-color: rgb(52, 141, 196);
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.nameDivLD{
+    width: 200px;
+    margin-left: 8%;    
+}
+.disDivLD{
+    
+    margin-left: 59%;
+}

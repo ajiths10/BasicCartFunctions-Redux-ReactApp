@@ -1,0 +1,15 @@
+.mainDivSC{
+    background-color: rgb(100, 188, 100);
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.nameDivSC{
+    width: 200px;
+    margin-left: 8%;    
+}
+.disDivSC{
+    
+    margin-left: 59%;
+}
